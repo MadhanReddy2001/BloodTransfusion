@@ -1,0 +1,123 @@
+<p-card>
+    <ng-template pTemplate="title"> Donor Information </ng-template>
+    
+    <ng-template pTemplate="subtitle">Please enter details of donor</ng-template>
+    
+    <ng-template pTemplate="content">
+        <div class="p-fluid">
+
+        <div class="details">
+             
+            <label for="donorname"><strong>DonorName:</strong></label>
+        <input
+                #donorname="ngModel"
+                id="donorname"
+                type="text"
+                field="donorname"
+                required
+                pInputText
+                placeholder="DonorName"
+                [(ngModel)]="donorinformation.donorname"
+                [ngClass]="{'ng-dirty':(donorname.invalid && submitted) ||(donorname.dirty && donorname.invalid)}"
+                >
+                <small *ngIf="(donorname.invalid && submitted) ||(donorname.dirty && donorname.invalid)" class="p-error">Donor Name is required</small>
+        </div>
+
+        <div class="details">
+            <label for="bloodgroup"><strong>BloodGroup:</strong></label>
+            <input
+                #bloodgroup="ngModel"
+                id="bloodgroup"
+                type="text"
+                field="bloodgroup"
+                required
+                pInputText
+                placeholder="BloodGroup"
+                [(ngModel)]="donorinformation.bloodgroup"
+                [ngClass]="{'ng-dirty':(bloodgroup.invalid && submitted) ||(bloodgroup.dirty && bloodgroup.invalid)}"
+                >
+             <small *ngIf="(bloodgroup.invalid && submitted) ||(bloodgroup.dirty && bloodgroup.invalid)" class="p-error">Select your blood group</small>
+        </div>
+
+        <div class="details">
+            <label for="mobileno"><strong>MobileNo:</strong></label>
+              <input
+                 #mobileno = "ngModel"
+                 id="mobileno"
+                 type="text"
+                 field="mobileno"
+                 required
+                 pInputText
+                 placeholder="Whatsapp no"
+                 [(ngModel)]="donorinformation.mobileno"
+                 [ngClass]="{'ng-dirty':(mobileno.invalid && submitted) || (mobileno.dirty && mobileno.invalid)}"
+              >
+               <small *ngIf="(mobileno.invalid && submitted) || (mobileno.dirty && mobileno.invalid)" class="p-error"> Please Enter Whatsupno</small>
+        </div>
+
+        <div class="details">
+            <label for="pincode"><strong>PinCode:</strong></label>
+             <p-autoComplete
+                #pincode= "ngModel"
+                id= "pincode"
+                type= "text"
+                field= "pincode"
+                placeholder= "pincode"
+                [autoHighlight]="true"
+                ariaLabel="pincode"
+                autocomplete="on"
+                [lazy]= "true"
+                [(ngModel)]= "donorinformation.pincode"
+                [suggestions]= "filteredpincode"
+                (completeMethod)= "filterpincodes($event)"
+                (onSelect)="onselectpincode($event)"
+                (ngModelChange)="ngmodelchange($event)"
+             >
+             <ng-template let-pincode pTemplate="selectedItem">
+                <div class="flex align-items-center gap-2">
+                    <div>{{pincode.pincode}}</div>
+                </div>
+             </ng-template>
+             </p-autoComplete>
+        </div>
+         
+        <div class="details">
+              <label for="country"><strong>Country</strong></label>
+
+              <p-autoComplete
+                    #country="ngModel"
+                    id="country"
+                    type="text"
+                    field="country"
+                    placeholder="Country"
+                    [(ngModel)]="donorinformation.country"
+              ></p-autoComplete>
+        </div>
+        <div class="details">
+            <label for="address1"><strong>Address1:</strong></label>
+            <input
+                #address1="ngModel"
+                id="address1"
+                type="text"
+                field="address1"
+                required
+                pInputText
+                placeholder="Address1"
+                [(ngModel)]="donorinformation.address1"
+                [ngClass]="{'ng-dirty':(address1.invalid && submitted) || (address1.invalid && address1.dirty)}"
+            >
+            <small *ngIf="(address1.invalid && submitted) || (address1.invalid && address1.dirty)" class="p-error">Enter you address</small>
+        </div>
+    </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="grid grid-nogutter justify-content-end">
+            <p-button label="Next" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+    </ng-template>
+
+</p-card>
+
+<router-outlet></router-outlet>
+

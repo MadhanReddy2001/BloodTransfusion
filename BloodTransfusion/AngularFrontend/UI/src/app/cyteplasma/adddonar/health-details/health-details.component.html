@@ -1,0 +1,101 @@
+<p-card>
+    <ng-template pTemplate="title">Health Details</ng-template>
+
+    <ng-template pTemplate="subtitle">Please Enter your health details</ng-template>
+
+    <ng-template pTemplate="content">
+
+             <div class="p-fluid">
+
+                <div class="card flex justify-content-center">
+                    <label for="anemia"><strong>Anemia:</strong></label>
+                    <p-dropdown 
+                        field="value"
+                        [options]="options" 
+                        [(ngModel)]="healthinformation.anemia" 
+                        optionLabel="value"
+                        [showClear]="true"
+                        placeholder="Select a Option">
+                    </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="alcohol"><strong>Alcohol:</strong></label>
+                    <p-dropdown 
+                            [options]="options" 
+                            field="value"
+                            [(ngModel)]="healthinformation.alcohol" 
+                            optionLabel="value" 
+                            [showClear]="true" 
+                            placeholder="Select a Option">
+                        </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="bp"><strong>BP:</strong></label>
+                    <p-dropdown 
+                          [options]="options" 
+                          [(ngModel)]="healthinformation.bp" 
+                          optionLabel="value" 
+                          [showClear]="true" 
+                          placeholder="Select a Option">
+                        </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="diabetic"><strong>Diabetics:</strong></label>
+                    <p-dropdown 
+                        [options]="options" 
+                        [(ngModel)]="healthinformation.diabetic" 
+                        optionLabel="value" 
+                        [showClear]="true" 
+                        placeholder="Select a Option">
+                    </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="hiv"><strong>HIV:</strong></label>
+                    <p-dropdown 
+                         [options]="options" 
+                         [(ngModel)]="healthinformation.hiv" 
+                         optionLabel="value" 
+                         [showClear]="true" 
+                         placeholder="Select a Option">
+                        </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="medicaltreatment"><strong>Medicaltreatment:</strong></label>
+                    <p-dropdown 
+                           [options]="options" 
+                           [(ngModel)]="healthinformation.medicaltreatment"
+                            optionLabel="value" 
+                            [showClear]="true" 
+                            placeholder="Select a Option">
+                        </p-dropdown>
+                </div>
+
+                <div class="card flex justify-content-center">
+                    <label for="previousdonation"><strong>PreviousDonation:</strong></label>
+                    <p-dropdown 
+                         [options]="options" 
+                         [(ngModel)]="healthinformation.previousdonation" 
+                         optionLabel="value" 
+                         [showClear]="true" 
+                         placeholder="Select a Option">
+                        </p-dropdown>
+                </div>
+
+             </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="grid grid-nogutter justify-content-between">
+            <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+            <p-button label="Next" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right"></p-button>
+        </div>
+    </ng-template>
+
+</p-card>
+         
+

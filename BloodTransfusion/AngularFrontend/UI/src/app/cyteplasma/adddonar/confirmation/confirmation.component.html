@@ -1,0 +1,98 @@
+<p-card class="stepsdemo-content">
+    <ng-template pTemplate="title">Confirmation</ng-template>
+
+    <ng-template pTemplate="subtitle">Please check all the details</ng-template>
+     
+    <ng-template pTemplate="content">
+
+        <div class="field col-12">
+            <label for="donorname"><strong>DonorName:</strong></label>
+            <b>{{confirminformation.donorinformation.donorname ? 
+                 confirminformation.donorinformation.donorname: '-'}}</b>
+        </div>
+        
+        <div class="field col-12">
+            <label for="bloodgroup"><strong>BloodGroup:</strong></label>
+            <b>{{confirminformation.donorinformation.bloodgroup ? 
+                 confirminformation.donorinformation.bloodgroup: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="mobileno"><strong>MobileNo:</strong></label>
+            <b>{{confirminformation.donorinformation.mobileno ? 
+                 confirminformation.donorinformation.mobileno: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="pincode"><strong>PinCode:</strong></label>
+            <b>{{confirminformation.donorinformation.pincode.pincode ? 
+                   confirminformation.donorinformation.pincode.pincode: '-'}}</b>
+              <!-- <b>{{confirminformation.donorinformation.pincode ? 
+                confirminformation.donorinformation.pincode: '-'}}</b> -->
+        </div>
+
+        <div class="field col-12">
+            <label for="country"><strong>Country:</strong></label>
+            <b>{{confirminformation.donorinformation.country ? 
+                 confirminformation.donorinformation.country: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="address1"><strong>Address1:</strong></label>
+            <b>{{confirminformation.donorinformation.address1 ? 
+                 confirminformation.donorinformation.address1: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="anemia"><strong>Anemia:</strong></label>
+            <b>{{confirminformation.healthinformation.anemia.value ? 
+                 confirminformation.healthinformation.anemia.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="alcohol"><strong>Alcohol:</strong></label>
+            <b>{{confirminformation.healthinformation.alcohol.value ? 
+                 confirminformation.healthinformation.alcohol.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="bp"><strong>BP:</strong></label>
+            <b>{{confirminformation.healthinformation.bp.value ? 
+                 confirminformation.healthinformation.bp.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="diabetic"><strong>Diabetic:</strong></label>
+            <b>{{confirminformation.healthinformation.diabetic.value ? 
+                 confirminformation.healthinformation.diabetic.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="hiv"><strong>HIV:</strong></label>
+            <b>{{confirminformation.healthinformation.hiv.value ? 
+                 confirminformation.healthinformation.hiv.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="medicaltreatment"><strong>MedicalTreatment:</strong></label>
+            <b>{{confirminformation.healthinformation.medicaltreatment.value ? 
+                 confirminformation.healthinformation.medicaltreatment.value: '-'}}</b>
+        </div>
+
+        <div class="field col-12">
+            <label for="previousdonation"><strong>PreviousDonation:</strong></label>
+            <b>{{confirminformation.healthinformation.previousdonation.value ? 
+                 confirminformation.healthinformation.previousdonation.value: '-'}}</b>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="grid grid-nogutter justify-content-between">
+            <p-button label="Back" (onClick)="prevPage()" icon="pi pi-angle-left"></p-button>
+            <p-button label="Complete" (onClick)="complete()" icon="pi pi-angle-right" iconPos="right" styleClass="p-button-success"></p-button>
+        </div>
+    </ng-template>
+</p-card>
+         
+
